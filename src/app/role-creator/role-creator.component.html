@@ -1,0 +1,17 @@
+<div class="container mt-5 p-5" id="roleCreatorComponent">
+    <form #roleCreatorForm="ngForm" (ngSubmit)="onSubmit(roleCreatorForm)">
+        <div>
+                <h2 class="mb-2 ml-3">Create New Role</h2>
+            <div class="m-3 form-group">
+                <div>
+                    <span class="mb-2">Role Name : </span>
+                    <input type="text" class="form-control" id="roleName" placeholder="Role Name ...">    
+                </div>
+                <div class="mt-2">
+                    <span>Rate : </span>
+                    <input class="mt-2" type="text" class="form-control" id="rate" placeholder="Rate ...">      
+                </div>  
+            </div>
+        </div>
+    </form>
+</div>

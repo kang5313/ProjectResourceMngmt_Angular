@@ -1,0 +1,16 @@
+<div class="container mt-5 p-5" id="roleDisplayComponent">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Role Name</th>
+                <th scope="col">Rate (per hr)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let role of roles">
+                <td>{{role.role_name}}</td>
+                <td>{{role.rate}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
