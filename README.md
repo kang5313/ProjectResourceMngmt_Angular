@@ -31,7 +31,7 @@ Total = 2 session
 1. Add-in user management module so that the user have to check in their account before access to the tool.
 2. Seperate the user into 2 categories: Normal User and Admin.
 3. Only Admin can access the CRUD for User's role.
-4. Resource Analytics module for the admin to use.
+4. Resource analytics module for the admin to use.
 
 ## Angular Info
 
