@@ -1,5 +1,28 @@
 # ProjectResourceMngmt
 
+## Features
+### Project Check In
+1. User can select the role, grace period for project and duration of resource usage calculation session when the user checks in the project to the system.
+
+### Project Check Out
+1. User check out the project and the system return the calculated resource used for the project.
+2. User can query the resource used for the project up to now without check out the project.
+
+### Calculation of Resource Usage
+1. time used for the project * role's rate = resource used
+2. A grace period is given when user check in the project, the resource used is set to 0 if the user check out the project before the grace period end.
+3. Sessions count : 
+**Eg:** 
+15 minutes per session, 10 minutes grace period are set. If the time used for the project is 26 minutes.
+Resource = 2 session * rate
+
+26minutes - 10minutes grace period = 16minutes <br>
+16minutes - 15minutes = 1 session. <br> 
+The remainder 1 minute is counted in another session.<br>
+Total = 2 session
+
+## Angular Info
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
 
 ## Development server
