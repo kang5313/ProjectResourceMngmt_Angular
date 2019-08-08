@@ -21,6 +21,18 @@ Resource = 2 session * rate
 The remainder 1 minute is counted in another session.<br>
 Total = 2 session
 
+### CRUD for User's role 
+1. User can create a new role and set the rate for new role
+2. User can update the role's rate.
+3. User can delete the role.
+4. User can view all the role and rate.
+
+## Future Work
+1. Add-in user management module so that the user have to check in their account before access to the tool.
+2. Seperate the user into 2 categories: Normal User and Admin.
+3. Only Admin can access the CRUD for User's role.
+4. Resource Analytics module for the admin to use.
+
 ## Angular Info
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
