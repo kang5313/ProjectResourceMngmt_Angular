@@ -13,7 +13,7 @@
                 <div class="m-3 form-group">
                     <div class="mb-2">Project : </div>
                     <div class="input-group">
-                        <input [(ngModel)]="project.name" type="text" class="form-control" id="projectName" placeholder="Project Name..." name="projectName" required  #projectName="ngModel">
+                        <input [(ngModel)]="project.projectName" type="text" class="form-control" id="projectName" placeholder="Project Name..." name="projectName" required  #projectName="ngModel">
                         <div class="input-group-append">
                             <button class="btn btn-primary" [disabled]="!checkOutForm.form.valid" type="submit" >Check Out</button>
                             <button class="ml-2 btn btn-secondary" [disabled]="!checkOutForm.form.valid" (click)="queryResource(checkOutForm)" type="button">Query Resource Usage</button>
@@ -23,7 +23,7 @@
                     <div class="ml-2 errorMsg" *ngIf="errorMsg">{{displayMsg}}</div>
                     <div class="ml-2 successMsg" *ngIf="successMsg">
                         <div>{{displayMsg}}</div>
-                        <div>Duration      : <span class="time_used">{{time}}</span></div>
+                        <div>Duration      : <span class="time_used">{{time}} minutes</span></div>
                         <div>Resource Used : <span class="res_used">{{resource_usage}}</span></div>
                     </div>
                 </div>            

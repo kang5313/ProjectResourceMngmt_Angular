@@ -33,6 +33,7 @@ export class CheckOutComponentComponent implements OnInit {
   }
 
   onSubmit(form:NgForm){
+    form.value['projectName'] = form.value['projectName'].toUpperCase()
     this.projectsService.checkOut(form.value)
     .subscribe(res=>{
       if(res['msgId']===1){
@@ -51,7 +52,7 @@ export class CheckOutComponentComponent implements OnInit {
   }
   
   queryResource(form:NgForm){
-    console.log(form.value)
+    form.value['projectName'] = form.value['projectName'].toUpperCase()
     this.projectsService.queryResource(form.value)
     .subscribe(res=>{
       if(res['msgId']===1){

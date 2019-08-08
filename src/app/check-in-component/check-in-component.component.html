@@ -11,10 +11,19 @@
             </div>
 
             <div class="m-3 form-group">
+                <div class="mb-2">Grace Period ( Minutes ): </div>
+                <input type="number" class="form-control" [(ngModel)]="gracePeriod" name="grace_period" #grace_period="ngModel" placeholder="Minutes ..." required>
+            </div>
+
+            <div class="m-3 form-group">
+                <div class="mb-2">Session (Minutes per session): </div>
+                <input type="number" class="form-control" [(ngModel)]="session" name="cal_Session" #cal_Session="ngModel" placeholder="Minutes ..." required>
+            </div>
+
+            <div class="m-3 form-group">
                 <div class="mb-2">Project : </div>
                 <div class="input-group">
-                    <input [(ngModel)]="project.name" type="text" class="form-control" id="projectName" placeholder="Project Name..." name="projectName" required minlength="2" #projectName="ngModel">
-                    {{projectName.className}}
+                    <input [(ngModel)]="project.projectName" type="text" class="form-control" id="projectName" placeholder="Project Name..." name="projectName" required minlength="2" #projectName="ngModel">
                     <div class="input-group-append">
                         <button class="btn btn-primary" [disabled]="!checkInForm.form.valid"type="submit" >Check In</button>
                     </div>

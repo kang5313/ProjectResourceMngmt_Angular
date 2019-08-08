@@ -5,12 +5,17 @@
             <div class="m-3 form-group">
                 <div>
                     <span class="mb-2">Role Name : </span>
-                    <input type="text" class="form-control" id="roleName" placeholder="Role Name ...">    
+                    <input type="text" [(ngModel)]="role.roleName" class="form-control" name="roleName" id="roleName" placeholder="Role Name ..." required>    
                 </div>
                 <div class="mt-2">
                     <span>Rate : </span>
-                    <input class="mt-2" type="text" class="form-control" id="rate" placeholder="Rate ...">      
+                    <input [(ngModel)]="role.roleRate" type="number" step="0.01" class="form-control" name="rate" id="rate" placeholder="Rate ..." required>      
                 </div>  
+                <button type="submit" class="mt-3 btn btn-primary" [disabled]="!roleCreatorForm.form.valid">Create</button>
+                <div class="mt-2 errorMsg" *ngIf="errorMsg">{{displayMsg}}</div>
+                <div class="mt-2 successMsg" *ngIf="successMsg">
+                        <div>{{displayMsg}}</div>
+                </div>
             </div>
         </div>
     </form>

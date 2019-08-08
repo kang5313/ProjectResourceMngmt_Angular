@@ -13,7 +13,7 @@ export class RoleDisplayComponent implements OnInit {
   constructor(private roleService:RoleService) {
     this.roleService.getRoles()
     .subscribe(res=>{
-      console.log(res['results'])
+      res['results'].sort((a,b)=>parseFloat(a.rate)-parseFloat(b.rate))
       this.roles = res['results']
     })
    }

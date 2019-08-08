@@ -15,13 +15,14 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ProjectsService {
-  projectUrl:string = 'http://localhost:3000'
+  projectUrl : string = 'http://localhost:3000'
   project : Project = 
   {
-    projectName:null,
-    check_in_role : null
+    projectName : null,
+    cal_Session : null,
+    check_in_role : null,
+    grace_period : null
   }
-
 
   constructor(private http:HttpClient) { }
 

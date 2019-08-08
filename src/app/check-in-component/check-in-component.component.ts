@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, NgForm } from '@angular/forms'
+import { NgForm } from '@angular/forms'
 import { Project } from '../project'
 import { ProjectsService } from '../projects.service';
 
@@ -11,6 +11,7 @@ import { ProjectsService } from '../projects.service';
 
 export class CheckInComponentComponent implements OnInit {
   roles : string[];
+  session : number;
   project : Project;
   errorMsg : boolean;
   successMsg : boolean;
@@ -31,10 +32,9 @@ export class CheckInComponentComponent implements OnInit {
   }
 
   onSubmit(form:NgForm){
-    console.log(form.value)
+    form.value['projectName'] = form.value['projectName'].toUpperCase()
     this.projectsService.checkIn(form.value)
     .subscribe(res=>{
-      console.log(res['msgId'])
       if(res['msgId']===1){
         this.errorMsg = true;
         this.displayMsg = res['msg']

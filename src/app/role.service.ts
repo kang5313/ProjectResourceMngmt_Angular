@@ -29,10 +29,35 @@ export class RoleService {
     return Observable.throw(errMsg);
   }
 
+  public initRole(){
+    return this.roles
+  }
+
   public getRoles(){
     return this.http.get(this.roleUrl+"/displayroles").pipe(
       map(data =>data),
       catchError(this.handleError)
     )
   }
+
+public createRole(roleCreate : Role) : Observable<Role>{
+  return this.http.post<Role>(this.roleUrl+"/create-role",roleCreate,httpOptions).pipe(
+    map(data =>data),
+    catchError(this.handleError)
+  )}
+
+public deleteRole(roleDelete : Role):Observable<Role>{
+  return this.http.post<Role>(this.roleUrl+"/delete-role",roleDelete,httpOptions).pipe(
+    map(data=>data),
+    catchError(this.handleError)
+  )
+}
+
+public setRate(roleSetRate : Role):Observable<Role>{
+  return this.http.post<Role>(this.roleUrl+"/set-role-rate",roleSetRate,httpOptions).pipe(
+    map(data=>data),
+    catchError(this.handleError)
+  )
+}
+
 }
